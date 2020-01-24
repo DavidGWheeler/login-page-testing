@@ -1,0 +1,22 @@
+# using Travis
+language: node_js
+node_js:
+  - lts/*
+env:
+  - PLATFORM=CHROME
+addons:
+  chrome: stable
+before_install:
+  - cd $HOME/Downloads
+  - wget http://chromedriver.storage.googleapis.com/80.0.3987.16/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip
+  - mkdir -p $HOME/chromedriver
+  - mv chromedriver $HOME/chromedriver
+  - echo "export PATH=$PATH:$HOME/chromedriver" >> $HOME/.bash_profile
+  - export PATH=$PATH:$PWD/chromedriver
+notifications:
+  email:
+    recipients:
+      d.wheeler1@comcast.net
+    on_failure: always
+
