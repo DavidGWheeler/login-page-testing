@@ -2,7 +2,7 @@
 
 const { until } = import('selenium-webdriver');
 
-function Page(webdriver, url) {
+const Page = (webdriver, url) => {
     this.driver = webdriver;
     this.url = url;
 };
@@ -12,9 +12,9 @@ Page.prototype.open = () => {
     return this;
 };
 
-Page.prototype.waitFor = (locator, timeout) => {
-    let waitTimeout = timeout || 20000;
-    let driver = this.driver;
+Page.prototype.waitForElement = (locator, timeout) => {
+    const waitTimeout = timeout || 20000;
+    const driver = this.driver;
     return driver.wait(until.elementLocated(locator, waitTimeout))
 };
 
