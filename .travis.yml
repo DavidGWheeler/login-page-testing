@@ -8,12 +8,12 @@ addons:
   chrome: stable
 before_install:
   - cd $HOME/Downloads
-  - wget http://chromedriver.storage.googleapis.com/80.0.3987.16/chromedriver_linux64.zip
+  - wget https://chromedriver.storage.googleapis.com/79.0.3945.36/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
-  - mkdir -p $HOME/chromedriver
-  - mv chromedriver $HOME/chromedriver
-  - echo "export PATH=$PATH:$HOME/chromedriver" >> $HOME/.bash_profile
-  - export PATH=$PATH:$PWD/chromedriver
+  - mkdir -p $HOME/lib
+  - mv chromedriver $HOME/lib
+  - echo "export PATH=$PATH:$HOME/lib" >> $HOME/.bash_profile
+  - export PATH=$PATH:$HOME/lib
 notifications:
   email:
     recipients:
