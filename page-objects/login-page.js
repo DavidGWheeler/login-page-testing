@@ -1,12 +1,12 @@
 'use strict';
 
 import FB, { Facebook, FacebookApiException } from 'fb';
-const fb = new Facebook(options);
+const FB = new Facebook(options);
 const page = import('../model/page');
 const FaceBookProfileLanding = import('./profile-landing-page');
 
-fb.getLoginStatus(function(response) {
-    if (response.status === 'connnected') {
+FB.getLoginStatus(function(response) {
+    if (response.status === 'connected') {
         let accessToken = response.authResponse.accessToken;
-    }
+    };
 });

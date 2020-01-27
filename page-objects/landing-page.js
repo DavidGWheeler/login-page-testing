@@ -1,16 +1,21 @@
 'use strict';
 
-const page = import('../model/page');
-const FaceBookLoginPage = import('../login-page.js')
+const page = require('../model/page');
 
-const FaceBookLandingPage = function(webdriver) {
-    page.call(this, webdriver, 'https://www.facebook.com/');
+function FaceBookLandingPage(webdriver) {
+    page.get(this, webdriver, 'https://www.facebook.com/');
 }
 
 FaceBookLandingPage.prototype = Object.create(page.prototype);
 FaceBookLandingPage.prototype.constructor = FaceBookLandingPage;
 
 FaceBookLandingPage.prototype.enterCredentials = user => {
-    return this.driver
+    this.driver.findElement(By.id('email')).sendKeys(`${user.email}`)
+    this.driver.findElement(By.id('password')).sendKeys(`${user.password}`)
+};
 
-}
+FaceBookLandingPage.prototype.clickLogInButton = () => {
+    this.driver.findElement(By.id('u_0_2'))
+};
+
+module.exports = FaceBookLandingPage;

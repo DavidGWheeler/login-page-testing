@@ -1,11 +1,32 @@
 {
   "name": "login-page-testing",
   "version": "1.0.0",
+  "scripts": {
+    "test": "node test/landing-page-test.js"
+  },
   "dependencies": {
     "chai": "^4.2.0",
     "chromedriver": "^79.0.0",
     "fb": "^2.0.0",
     "mocha": "^7.0.0",
     "selenium-webdriver": "^4.0.0-alpha.5"
-  }
+  },
+  "devDependencies": {
+    "chai-as-promised": "^7.1.1"
+  },
+  "description": "An example of setting up a selenium-based test framework using Javascript and the Page-Object model",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidGWheeler/login-page-testing.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DavidGWheeler/login-page-testing/issues"
+  },
+  "homepage": "https://github.com/DavidGWheeler/login-page-testing#readme"
 }

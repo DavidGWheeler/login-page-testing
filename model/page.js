@@ -1,10 +1,12 @@
 'use strict';
 
-const { until } = import('selenium-webdriver');
+const until = require('selenium-webdriver').until;
 
-const Page = (webdriver, url) => {
-    this.driver = webdriver;
-    this.url = url;
+class Page {
+    constructor(webdriver, url) {
+        this.driver = webdriver,
+        this.url = url;
+    }
 };
 
 Page.prototype.open = () => {
@@ -13,7 +15,7 @@ Page.prototype.open = () => {
 };
 
 Page.prototype.waitForElement = (locator, timeout) => {
-    const waitTimeout = timeout || 20000;
+    let waitTimeout = timeout || 20000;
     const driver = this.driver;
     return driver.wait(until.elementLocated(locator, waitTimeout))
 };
